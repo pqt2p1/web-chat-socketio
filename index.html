@@ -32,7 +32,14 @@
   <script src="/socket.io/socket.io.js"></script>
   <script>
     const socket = io();
+
+    
     const name = prompt("Enter Name: ");
+    if (name === "") {
+        name == 'Anonymous'
+    }
+
+
     const chatForm = document.querySelector("#chat-form");
     const chatMes = document.querySelector("#chat-mes");
 
