@@ -50,6 +50,8 @@ io.on("connection", (socket) => {
   broadcastBitcoinPrice();
 });
 
+
+
 // Bitcoin price
 async function broadcastBitcoinPrice() {
   const url = "http://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT";
