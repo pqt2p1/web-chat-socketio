@@ -26,14 +26,14 @@ app.get("/", (req, res) => {
 // Connect to socket
 io.on("connection", (socket) => {
   console.log("user connected");
-
+  console.log();
   // Find 5 lastest messages
   Msg.find()
     .limit(5)
     .sort({ date: -1 })
     .exec((err, result) => {
       // Send 5 lastest messages to client
-      io.emit("output-messages", result);
+      io.to(socket.id).emit("output-messages", result);
     });
 
   // Listen to user input
